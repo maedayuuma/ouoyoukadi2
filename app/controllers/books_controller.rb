@@ -4,6 +4,7 @@ before_action :is_matching_login_user, only: [:edit, :update]
   def show
     @new = Book.new
     @book = Book.find(params[:id])
+    @post_comment = PostComment.new
     @user = @book.user
   end
 
@@ -29,7 +30,7 @@ before_action :is_matching_login_user, only: [:edit, :update]
   def edit
     @book = Book.find(params[:id])
   end
-  
+
   def destroy
     book = Book.find(params[:id])
     book.destroy
