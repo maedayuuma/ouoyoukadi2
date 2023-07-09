@@ -1,0 +1,6 @@
+<td class="mt-3">
+  <%= form_with model: [ book, post_comment ], local: false do |f| %>
+    <%= f.text_area :comment, placeholder: "コメントをここに", class: "w-100" %><br>
+    <%= f.submit "送信" %>
+  <% end %>
+</td>
